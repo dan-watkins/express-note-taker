@@ -1,7 +1,7 @@
 const express = require("express");
-const fs = require('fs');
 const res = require("express/lib/response");
 const path = require("path");
+const { readAndAppend, readFromFile, writeToFile} = require('./helpers/fsUtils');
 const PORT = process.env.port || 3001;
 const app = express();
 
@@ -20,7 +20,7 @@ res.sendFile(path.join(__dirname, '/public/index.html'))
 
 //`GET /api/notes` should read the `db.json` file and return all saved notes as JSON. THIS NEEDS A HELPER CLASS TO REPLACE FS.READFILE, EXPECTING A CALLBACK.
 app.get('/api/notes', (req, res) =>
-fs.readFile('./db/notes.json').then((data) => res.json(JSON.parse(data)))
+readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
 //`POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
