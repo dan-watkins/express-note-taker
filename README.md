@@ -6,7 +6,7 @@
 
 Using ExpressJS this application allows you to enter, save, and delete notes for anything you may need. Notes require a title and description and are saved to the left pane of the UI. The Trash Icon allows you to delete any saved notes if they're no longer needed. We're using ExpressJS to handle the API calls necessary to perform the various GET, POST, and DELETE operations to support the note functionality.
 
-Link to Deployed Application: https://pure-stream-06716-237c2c143b03.herokuapp.com/
+![Express Note Taker](./assets/images/Note-Taker.png)
 
 ## Table of Contents
 
